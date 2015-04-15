@@ -58,8 +58,11 @@ class Hero:
     def learn(self,spell):
     	self.spell=spell
 
-    def attack(self):
-    	
+    def attack(self,dmg):
+    	if dmg is "magic":
+    		
+
+
 
 
 
