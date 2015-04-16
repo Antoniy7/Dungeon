@@ -1,4 +1,3 @@
-
 import Weapon from weapon
 import Man from man
 class Spell(Weapon,Man):
@@ -16,6 +15,10 @@ class Spell(Weapon,Man):
     def get_spell_mana_cost(self):
         return int(self.mana_cost)
 
+    def mana_cost(self):
+        if self.mana > mana_cost:
+            return False
 
+        else self.mana-=mana_cost
 
 
