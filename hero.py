@@ -3,7 +3,7 @@ import Man from man
 import Spell from spell
 
 class Hero(Man,Weapon):
-     def __init__ (self,name="Baron",title="Dragonslayer",mana_regeneration_rate=2):
+     def __init__ (self,health,mana,name="Baron",title="Dragonslayer",mana_regeneration_rate=2):
         super().__init__(None,health,mana)
         self.mana_regeneration_rate=mana_regeneration_rate
         self.name=name
