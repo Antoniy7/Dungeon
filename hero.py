@@ -1,5 +1,6 @@
 import Weapon from weapon
 import Man from man
+import Spell from spell
 
 class Hero(Man,Weapon):
      def __init__ (self,name="Baron",title="Dragonslayer",mana_regeneration_rate=2):
@@ -18,6 +19,16 @@ class Hero(Man,Weapon):
 
     def learn(self,spell):
         self.spell=spell
+
+    def attack(self, by="None"):
+        if by == "weapon":
+            return self.weapon.get_weapon_name()
+        if by == "magic":
+            if self.mana < self.spell.get_spell_damage():
+                raise Exception("ERROR")
+            else:
+                self.mana -= self.get_spell_damage()
+                return self.spell.get_spell_damage()
 
 
     def attack(self,attacking_object,weapon):
