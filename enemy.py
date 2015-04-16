@@ -29,4 +29,5 @@ class Enemy:
             if self.__mana + points > self.__maxMana:
                 self.mana = self.__maxMana
 
-        def attack():
+        def attack(self):
+            return
