@@ -1,19 +1,9 @@
-class Hero:
-	def __init__ (self,name="Baron",title="Dragonslayer",health=100,mana=100,mana_regeneration_rate=2):
-		self.name=name
-		self.title=title
+class Man:
+	def __init__ (self,health=100,mana=100):
 		self.health=health
 		self.mana=mana
-		self.mana_regeneration_rate=mana_regeneration_rate
-		self.weapon=weapon
-		self.spell=spell
 
-	def known_as(self):
-		 message="{hero_name} {hero_title}"
-        return message.format(self.name, self.title)
-    
-
-    def is_alive(self):
+	def is_alive(self):
     	if self.health<=0 :
     		return False
     	else :
@@ -21,7 +11,7 @@ class Hero:
 
     def get_health(self):
     	return self.health
-    
+
     def get_mana(self):
     	return self.mana
 
@@ -31,10 +21,11 @@ class Hero:
     	else :
     		return False
 
-    def take_damage(self,damage_points):
-    	self.health-=damage_points
-    	if self.health<0:
-    		self.health=0
+    def take_mana(self,mana_points):
+    	if self.mana is 100:
+    		return False
+
+    	self.mana+=mana_points
 
     def take_healing(self,healing_points):
     	if self.health<0:
@@ -44,22 +35,35 @@ class Hero:
     	self.health+=healing_points
     	return True
 
-    def take_mana(self,mana_points):
-    	if self.mana is 100:
-    		return False
-    	if hero_move() is True:
-    		self.mana += self.mana_regeneration_rate
 
-    	self.mana+=mana_points
+class Hero(Man):
+	 def __init__ (self,name="Baron",title="Dragonslayer",mana_regeneration_rate=2):
+		super().__init__(None,health,mana)
+		self.mana_regeneration_rate=mana_regeneration_rate
+		self.name=name
+		self.title=title
 
-    def equip(self,weapon):
-    	self.weapon=weapon
+	
+	def take_mana(self,mana_points):
+		super().take_mana(None,health,mana)
+		if hero_move() is True:
+			self.mana += self.mana_regeneration_rate
+
+
+	def known_as(self):
+		 message="{hero_name} {hero_title}"
+        return message.format(self.name, self.title)
+    
+    
+    def take_damage(self,damage_points):
+    	self.health-=damage_points
+    	if self.health<0:
+    		self.health=0
 
     def learn(self,spell):
     	self.spell=spell
 
-    def attack(self,dmg):
-    	if dmg is "magic":
+   
     		
 
 
