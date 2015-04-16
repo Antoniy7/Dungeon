@@ -1,3 +1,4 @@
+
 #import Man from man
 #import Hero from hero
 
@@ -14,6 +15,4 @@ class Weapon(Man):
 
     def get_weapon_damage(self):
         return int(self.weapon_damage)
-
-
 
