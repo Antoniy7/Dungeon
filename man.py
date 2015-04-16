@@ -1,36 +1,31 @@
 class Man:
-	def __init__ (self,health=100,mana=100):
-		self.health=health
-		self.mana=mana
 
-	def is_alive(self):
-    	if self.health<=0 :
-    		return False
-    	else :
-    		return True
+    def __init__(self, health=100, mana=100):
+        self.__health = health
+        self.__maxHealth = 100
+        self.__maxMana = 100
+        self.__mana = mana
+
+    def is_alive(self):
+        return self.__health > 0
 
     def get_health(self):
-    	return self.health
+        return self.__health
 
     def get_mana(self):
-    	return self.mana
+        return self.__mana
 
-    def can_cast():
-    	if self.mana>0:
-    		return True
-    	else :
-    		return False
+    def can_cast(self):
+        return self.__mana > 0
 
-    def take_mana(self,mana_points):
-    	if self.mana is 100:
-    		return False
+    def take_healing(self, points):
+        if (self.__health + points) > self.__maxHealth:
+            self.__health = self.__maxHealth
+        else:
+            self.__health += points
 
-    	self.mana+=mana_points
-
-    def take_healing(self,healing_points):
-    	if self.health<0:
-    		return False
-    	if self.health is 100:
-    		return 
-    	self.health+=healing_points
-    	return True
+    def take_mana(self, points):
+        if self.__mana + points > self.__maxMana:
+            self.mana = self.__maxMana
+        else:
+            self.__mana += points
