@@ -1,24 +1,21 @@
-import Weapon from weapon
-import Man from man
-class Spell(Weapon,Man):
-    def __init__(self,name,damage,mana_cost,cast_range):
-        super().__init__(None,name,damage)
-        self.__mana_cost=mana_cost
-        self.__cast_range=cast_range
-    
+from weapon import Weapon
+
+
+class Spell(Weapon):
+
+    def __init__(self, name, damage, mana_cost, cast_range):
+        Weapon.__init__(self, name, damage)
+        self.__mana_cost = mana_cost
+        self.__cast_range = cast_range
+
     def get_spell_name(self):
-        return str(self.name)
+        return self.__name
 
     def get_spell_damage(self):
-        return int(self.damage)
+        return self.__damage
 
     def get_spell_mana_cost(self):
-        return int(self.mana_cost)
+        return self.__mana_cost
 
-    def mana_cost(self):
-        if self.mana > mana_cost:
-            return False
-
-        else self.mana-=mana_cost
-
-
+    def get_cast_range(self):
+        return self.__cast_range
