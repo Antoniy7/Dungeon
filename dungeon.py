@@ -75,6 +75,4 @@ class Dungeon:
         if self.list[new_x][new_y]=="T":
             self.hero.take_mana
 
-            self.hero.take_mana(self.hero.mana_regeneration_rate)
-            self.changing_pos_func(next_x_position, next_y_position)
-            #self.pick_treasure("treasures.json")
+            
