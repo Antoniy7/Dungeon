@@ -1,11 +1,12 @@
-import Hero from hero
+from hero import Hero
+
 
 class Dungeon:
 
     def __init__(self, filename):
-        self.list=[]
-        self.current_x=None
-        self.current_y=None
+        self.list = []
+        self.current_x = None
+        self.current_y = None
         with open(filename, "r") as in_file:
             lines = in_file.read().splitlines()
             self.dungeon_map = []
@@ -20,15 +21,11 @@ class Dungeon:
         if not (isinstance(hero, Hero)):
             raise Exception("Not A Hero")
 
-        for i in range (0, len(self.list)):
-            for j in range (0, len(self.list[i])):
-                if self.list[i][j]=="S":
-                    self.list[i][j]="H"
+        for i in range(0, len(self.list)):
+            for j in range(0, len(self.list[i])):
+                if self.list[i][j] == "S":
+                    self.list[i][j] = "H"
                     self.current_x = i
                     self.current_y = j
- 
+
     return True
-
-        
-
-
