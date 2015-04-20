@@ -1,5 +1,4 @@
 class Man:
-
     def __init__ (self,health=100,mana=100):
         self.health=health
         self.mana=mana
