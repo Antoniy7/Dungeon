@@ -3,13 +3,14 @@ import Man from man
 import Spell from spell
 
 class Hero(Man,Weapon):
-     def __init__ (self,health,mana,name="Baron",title="Dragonslayer",mana_regeneration_rate=2):
+     def __init__ (self,health,mana,name="Baron",title="Dragonslayer",mana_regeneration_rate=2,take_healing):
         super().__init__(None,health,mana)
         self.mana_regeneration_rate=mana_regeneration_rate
         self.name=name
         self.title=title
         self.weapon=None
         self.spell=None
+
 
     def has_weapon(self):
         return self.equipped_weapon
@@ -59,6 +60,14 @@ class Hero(Man,Weapon):
 
     def learn(self,spell):
         self.spell=spell
+
+    def take_healing(self,healing_points):
+        if self.health<0:
+            return False
+        if self.health is 100:
+            return 
+        self.health+=healing_points
+        return True
 
    
             
