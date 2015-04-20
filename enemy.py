@@ -8,4 +8,4 @@ class Enemy(Man):
         self.__damage = damage
 
         def attack(self):
-            return
+            return self.__damage
