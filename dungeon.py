@@ -1,4 +1,4 @@
-import Hero from hero
+import Hero from hero  #from file import class
 import random
 
 class Dungeon:
@@ -15,7 +15,7 @@ class Dungeon:
             for line in lines:
                 self.list.append(line)
     return self.list
-              
+             
 
     def print_map(self):
         for line in self.list:
@@ -73,6 +73,6 @@ class Dungeon:
         new_y = self.current_y + 1
 
         if self.list[new_x][new_y]=="T":
-            self.hero.take_mana
+            self.hero.pick_the_treasure
 
             
