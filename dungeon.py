@@ -1,4 +1,5 @@
 import Hero from hero
+import random
 
 class Dungeon:
 
@@ -32,7 +33,19 @@ class Dungeon:
                     self.current_y = j
  
     return True
- 
+
+     def pick_the_treasure(self):
+        treasures = ["mana", "heal"]
+        random_treasure = random.choice(treasures)
+        
+        if random_treasure == "heal":
+            health_points = random.randint(0,100)
+            self.hero.take_healing(health_points)
+            
+        if random_treasure == "mana":
+            mana_points = random.randint(0,100)
+            self.hero.take_mana(mana_points)
+            
     def move_hero(self, direction):
         if direction == "up":
             if self.current_x == 0:
@@ -58,3 +71,10 @@ class Dungeon:
                 return False
         new_x = self.current_x
         new_y = self.current_y + 1
+
+        if self.list[new_x][new_y]=="T":
+            self.hero.take_mana
+
+            self.hero.take_mana(self.hero.mana_regeneration_rate)
+            self.changing_pos_func(next_x_position, next_y_position)
+            #self.pick_treasure("treasures.json")
